@@ -1,0 +1,82 @@
+Ques:Create a generic print function?
+Ans: 
+package sumgenerics;
+public class SumGenerics {
+
+    public static <T extends Number>void sum(T a,T b){
+        System.out.println("Sum is"+(a.doubleValue()+b.doubleValue()));
+        
+        
+    }
+    public static void main(String args[]){
+        sum(1,2);
+        sum(2.0,3.5);
+        sum(3f,4f);
+    }
+}
+
+Ques:WAP of java to sorts the list on the basis of Age and Name?
+Ans:
+package movies;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+
+
+public class Sort implements Comparable<Sort>{
+    String Name;
+    int Age;
+    Sort(String Name,int Age)
+    {
+        this.Name=Name;
+        this.Age=Age;
+        
+    }
+public String getName() {
+        return Name;
+    }
+
+    public int getAge() {
+        return Age;
+    }
+        public static void main(String args[]){
+            ArrayList<Sort>sort=new ArrayList<Sort>();
+            sort.add(new Sort("Swapan",20));
+            sort.add(new Sort("Tasvir",22));
+            sort.add(new Sort("Happy",19));
+            sort.add(new Sort("Jaishree",17));
+            sort.add(new Sort("Puneet",10));
+            
+            Personname comparename=new Personname();
+            Collections.sort(sort.comparename);
+            System.out.println("\nSorted According to Name:\n");
+            for(Sort person:sort);
+            System.out.println(person.getName()+" "+person.getAge());
+            Collections .sort(sort);
+            System.out.println("\nSorted According to Age :\n");
+            for(Sort person :sort)
+                System.out.println(person.getName()+" "+person.getAge());
+        
+          
+        }
+    
+    @Override
+    public int compareTo(Sort t) {
+return this.Age-t.Age;
+      
+    }
+    
+}
+class Personname implements Comparator<Sort>
+{
+    @Override
+      public int compareTo(Sort t,Sort t1) {
+return t.getName().compareTo(t1.getName());
+
+
+
+      
+    }
+ 
+    }
+
